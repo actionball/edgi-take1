@@ -19,9 +19,11 @@ export default function BookmarkButton({
   const supabase = createClientComponentClient();
 
   const bookmarks =
-    video.bookmarksCount[0]?.count - (video.userBookmarks.length ? 1 : 0);
+    (video.tiktok_save_count || 0) +
+    video.bookmarks_count[0]?.count -
+    (video.user_bookmarks.length ? 1 : 0);
   const [bookmark, setBookmark] = useState<Bookmark | null>(
-    video.userBookmarks[0]
+    video.user_bookmarks[0]
   );
 
   const deleteBookmark = async (bookmark: Bookmark) => {

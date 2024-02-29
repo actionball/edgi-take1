@@ -15,8 +15,8 @@ export default function LikeButton({
 }) {
   const supabase = createClientComponentClient();
 
-  const likesCount = comment.likesCount?.[0]?.count || 0;
-  const userLikes = comment.userLikes || [];
+  const likesCount = comment.likes_count?.[0]?.count || 0;
+  const userLikes = comment.user_likes || [];
   const likes = likesCount - (userLikes.length ? 1 : 0);
   const [like, setLike] = useState<Like | null>(userLikes[0]);
 

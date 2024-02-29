@@ -18,8 +18,11 @@ export default function LikeButton({
 }) {
   const supabase = createClientComponentClient();
 
-  const likes = video.likesCount[0]?.count - (video.userLikes.length ? 1 : 0);
-  const [like, setLike] = useState<Like | null>(video.userLikes[0]);
+  const likes =
+    (video.tiktok_like_count || 0) +
+    video.likes_count[0]?.count -
+    (video.user_likes.length ? 1 : 0);
+  const [like, setLike] = useState<Like | null>(video.user_likes[0]);
 
   const deleteLike = async (like: Like) => {
     if (!like.id) return;

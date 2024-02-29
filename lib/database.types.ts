@@ -6,7 +6,7 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       bookmarks: {
@@ -88,33 +88,36 @@ export interface Database {
       creators: {
         Row: {
           avatar_filename: string | null
-          bio: string | null
+          bio: string
           created_at: string
           handle: string
           id: string
-          name: string | null
+          name: string
+          tiktok_id: string | null
           updated_at: string
-          website: string | null
+          website: string
         }
         Insert: {
           avatar_filename?: string | null
-          bio?: string | null
+          bio?: string
           created_at?: string
           handle: string
           id?: string
-          name?: string | null
+          name: string
+          tiktok_id?: string | null
           updated_at?: string
-          website?: string | null
+          website?: string
         }
         Update: {
           avatar_filename?: string | null
-          bio?: string | null
+          bio?: string
           created_at?: string
           handle?: string
           id?: string
-          name?: string | null
+          name?: string
+          tiktok_id?: string | null
           updated_at?: string
-          website?: string | null
+          website?: string
         }
         Relationships: []
       }
@@ -305,28 +308,64 @@ export interface Database {
       }
       videos: {
         Row: {
-          caption: string
+          caption: string | null
+          cover_filename: string | null
           created_at: string
-          creator_id: string | null
+          creator_id: string
+          duration: number | null
           filename: string
+          height: number | null
           id: string
+          ratio: string | null
+          tiktok_comment_count: number | null
+          tiktok_id: string | null
+          tiktok_like_count: number | null
+          tiktok_play_count: number | null
+          tiktok_save_count: number | null
+          tiktok_share_count: number | null
+          tiktok_url: string | null
           updated_at: string
+          width: number | null
         }
         Insert: {
-          caption: string
+          caption?: string | null
+          cover_filename?: string | null
           created_at?: string
-          creator_id?: string | null
+          creator_id: string
+          duration?: number | null
           filename: string
+          height?: number | null
           id?: string
+          ratio?: string | null
+          tiktok_comment_count?: number | null
+          tiktok_id?: string | null
+          tiktok_like_count?: number | null
+          tiktok_play_count?: number | null
+          tiktok_save_count?: number | null
+          tiktok_share_count?: number | null
+          tiktok_url?: string | null
           updated_at?: string
+          width?: number | null
         }
         Update: {
-          caption?: string
+          caption?: string | null
+          cover_filename?: string | null
           created_at?: string
-          creator_id?: string | null
+          creator_id?: string
+          duration?: number | null
           filename?: string
+          height?: number | null
           id?: string
+          ratio?: string | null
+          tiktok_comment_count?: number | null
+          tiktok_id?: string | null
+          tiktok_like_count?: number | null
+          tiktok_play_count?: number | null
+          tiktok_save_count?: number | null
+          tiktok_share_count?: number | null
+          tiktok_url?: string | null
           updated_at?: string
+          width?: number | null
         }
         Relationships: [
           {

@@ -24,18 +24,23 @@ export default function Index() {
         *,
         creator:creator_id (
           *,
-          followsCount:follows(count),
+          follows_count:follows(count),
           userFollows:follows (id, user_id)
         ),
-        bookmarksCount:bookmarks(count),
-        commentsCount:comments(count),
-        likesCount:likes(count),
-        userBookmarks:bookmarks (id, user_id),
-        userLikes:likes (id, user_id)
+        bookmarks_count:bookmarks(count),
+        comments_count:comments(count),
+        likes_count:likes(count),
+        tiktok_comment_count,
+        tiktok_like_count,
+        tiktok_play_count,
+        tiktok_save_count,
+        tiktok_share_count,
+        user_bookmarks:bookmarks (id, user_id),
+        user_likes:likes (id, user_id)
         `
       )
-      .eq("userLikes.user_id", user?.id)
-      .eq("userBookmarks.user_id", user?.id)
+      .eq("user_likes.user_id", user?.id)
+      .eq("user_bookmarks.user_id", user?.id)
       .eq("creator.userFollows.user_id", user?.id)
       .order("tiktok_id", { ascending: Math.random() > 0.5 })
       .limit(500);

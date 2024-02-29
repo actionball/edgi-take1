@@ -29,12 +29,12 @@ export default function CommentsPanel({
         `
       *,
       profile:profiles (username, avatar_filename),
-      likesCount:likes(count),
-      userLikes:likes (id, user_id)
+      likes_count:likes(count),
+      user_likes:likes (id, user_id)
       `
       )
       .eq("video_id", video.id)
-      .eq("userLikes.user_id", userId)
+      .eq("user_likes.user_id", userId)
       .limit(100);
 
     if (!data) return alert("there was a problem loading comments");
@@ -84,8 +84,8 @@ export default function CommentsPanel({
       >
         <div className="relative">
           <div className="flex items-center justify-center text-sm font-bold h-14">
-            {`${video.commentsCount[0].count} ${
-              video.commentsCount[0].count === 1 ? "Comment" : "Comments"
+            {`${video.comments_count[0].count} ${
+              video.comments_count[0].count === 1 ? "Comment" : "Comments"
             }`}
           </div>
           <button

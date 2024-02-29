@@ -20,7 +20,7 @@ export default function FollowButton({
   const profilePic = "https://i.pravatar.cc/300";
 
   const follows =
-    creator.followsCount[0]?.count - (creator.userFollows.length ? 1 : 0);
+    creator.follows_count[0]?.count - (creator.userFollows.length ? 1 : 0);
   const [follow, setFollow] = useState<Follow | null>(creator.userFollows[0]);
 
   const deleteFollow = async (follow: Follow) => {

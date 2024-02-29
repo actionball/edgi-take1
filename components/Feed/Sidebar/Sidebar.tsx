@@ -17,7 +17,7 @@ export default function Sidebar({
 }) {
   const supabase = createClientComponentClient();
 
-  const shares = 30;
+  const shares = video.tiktok_share_count || 0;
   const [userId, setUserId] = useState("");
 
   supabase.auth.getSession().then(({ data }) => {
@@ -35,7 +35,7 @@ export default function Sidebar({
           style={{ width: "35px", height: "35px", color: "white" }}
         />
         {/* Displaying the number of comments */}
-        <p>{video.commentsCount[0].count}</p>
+        <p>{video.comments_count[0].count}</p>
       </div>
       <BookmarkButton userId={userId} video={video} />
       <div className={styles.sidebarIcon}>
