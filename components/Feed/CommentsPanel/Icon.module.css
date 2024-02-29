@@ -1,0 +1,14 @@
+.icon {
+  height: 14px;
+  width: 14px;
+  color: var(--color-light-gray);
+  margin-right: 8px;
+}
+
+.icon:hover {
+  color: var(--color-mid-gray);
+}
+
+.icon.liked {
+  color: var(--color-red);
+}

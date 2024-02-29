@@ -1,0 +1,19 @@
+.list {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height: 100%;
+  width: 100%;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100%;
+  width: 100%;
+}

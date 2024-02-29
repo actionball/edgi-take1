@@ -1,0 +1,21 @@
+{
+  "name": "take1-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "^2.1565.0",
+    "axios": "^1.6.7",
+    "csv-stringify": "^6.4.5",
+    "dotenv": "^16.4.5",
+    "fs": "0.0.1-security",
+    "path": "0.12.7",
+    "tiktok-scraper-without-watermark": "github:MRHRTZ/Tiktok-Scraper-Without-Watermark"
+  }
+}

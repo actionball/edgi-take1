@@ -1,0 +1,27 @@
+.app {
+  height: 100dvh;
+  background-color: #000;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  position: relative;
+  height: 100dvh;
+  max-height: 932px;
+  width: 100dvw;
+  max-width: 430px;
+  background: url("/images/gradient.jpg");
+}
+
+.content {
+  height: calc(100% - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.tabBar {
+  height: 50px;
+}
