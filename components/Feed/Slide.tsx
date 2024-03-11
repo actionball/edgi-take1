@@ -116,7 +116,7 @@ export default function Slide({
       {/* Bottom Video Details Overlay */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
         <span className="font-semibold">@{video.creator?.handle}</span>{" "}
-        <Caption caption={video.caption} />
+        <Caption caption={video.caption || ""} />
       </div>
     </div>
   );
