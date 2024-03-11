@@ -6,6 +6,7 @@ import { Video } from "@/lib/query.types";
 import { Tables } from "@/lib/database.types";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { v4 as uuidv4 } from "uuid";
+import Caption from "./Caption";
 
 type View = Tables<"video_views">;
 
@@ -115,7 +116,7 @@ export default function Slide({
       {/* Bottom Video Details Overlay */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
         <span className="font-semibold">@{video.creator?.handle}</span>{" "}
-        {video.caption}
+        <Caption caption={video.caption || ""} />
       </div>
     </div>
   );
